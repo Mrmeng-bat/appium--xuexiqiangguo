@@ -127,7 +127,7 @@ def print_log():
     print("等待任务执行")
 def job():
     print('正在打开夜神模拟器')
-    os.popen( r'E:\yeshen2\Nox\bin\Nox.exe ')
+    os.popen( r'E:\yeshen2\Nox\bin\NoxConsole.exe launch -name:夜神模拟器')#这里请更改为你电脑上夜神模拟器的位置
     time.sleep(60)
     print("正在打开appium")
     res = subprocess.Popen('appium', shell=True)
@@ -141,7 +141,7 @@ def job():
     print("任务完成关闭appium")
     os.popen ("taskkill /im /F node.exe")
     print("正在关闭夜神模拟器")
-    os.popen ("taskkill /F /im Nox.exe")
+    os.popen (r"E:\yeshen2\Nox\bin\NoxConsole.exe quit -index:0 ")
     time.sleep(5)
     text_list = np.array (all_of_text_list)
     move_list = np.array (all_of_vod_list)
