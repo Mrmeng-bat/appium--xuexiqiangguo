@@ -44,7 +44,7 @@ def move_to_index(driver): #转到我的学习
     driver.find_element_by_id("cn.xuexi.android:id/home_bottom_tab_icon_large").click()
 
 def move_to_vod(driver):
-    driver.find_element_by_xpath('//android.widget.TextView[@text="视频学习"]').click()
+    driver.find_element_by_xpath('//android.widget.TextView[@text="视听学习"]').click()
 
 def move_to_my_study(driver):
     driver.find_element_by_xpath('//android.widget.TextView[@text="我的"]').click()
@@ -90,21 +90,21 @@ def look_text(driver):
         for d_text in for_list:
             if len(lists)>6:
                 break
+            print('正在打开',d_text.text)
             d_text.click()
             time.sleep(2)
-            print('正在打开',d_text.text)
             swipe_y2(driver)
             time.sleep(30)
-            lists.append(d_text.text)
             swipe_x(driver)
+            lists.append(d_text.text)
             time.sleep(2)
         swipe_y(driver)
     print("文章学习完成")
     
 def look_vod(driver):
+    print('开始视频学习')
     lists=[]
     time.sleep(2)
-    print("aaaa")
     move_to_vod(driver)
     time.sleep(2)
     while len(lists)<7:
@@ -113,13 +113,13 @@ def look_vod(driver):
         for d_text in for_list:
             if len(lists)>6:
                 break
+            print('正在打开',d_text.text)
             d_text.click()
             time.sleep(2)
-            print('正在打开',d_text.text)
             swipe_y(driver)
             time.sleep(240)
-            lists.append(d_text.text)
             swipe_x(driver)
+            lists.append(d_text.text)
             time.sleep(2)
         swipe_y(driver)
     print("视频学习完成")
@@ -150,4 +150,4 @@ def job():
     
 if __name__ == '__main__':
     job()
-    
+
